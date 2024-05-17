@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    padding: 10%;
+
+}
+
+
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1%;
+}
+
+button{
+    font-family:'Times New Roman', Times, serif;
+}
+
+input{
+    height: 50%;
+}
