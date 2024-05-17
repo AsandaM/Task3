@@ -2,6 +2,7 @@ let input = document.querySelector('[type="text"]')
 // let clear = document.querySelector()
 
 let buttons = document.querySelectorAll('button')
+let clear = document.querySelectorAll('#backspace')
 
 let currentOperation = '';
 let firstOperand = null;
@@ -31,7 +32,7 @@ for (let button of buttons) {
             input.value = ''; // Clear the input for the next operand
         } else if (buttonText === '1/x') { // If the button is '1/x'
             firstOperand = parseFloat(input.value);
-            currentOperation = '/'; // Set operation to division
+            currentOperation = buttonText; // Set operation to division
             input.value = ''; // Clear the input for the next operand
         } else if (buttonText === '=') { // If the button is '='
             if (currentOperation === '+') {
@@ -44,8 +45,8 @@ for (let button of buttons) {
              else if (currentOperation === '/') { // Check for division operation
                 input.value = firstOperand / parseFloat(input.value);
             }
-             else if (currentOperation === '/') { // Check for division operation
-                input.value = 1 / parseFloat(input.value);
+             else if (currentOperation === '1/x') { // Check for division operation
+                input.value = 1 / parseFloat(input.value)
             }
             currentOperation = '';
         } else if (buttonText === 'C') { // If the button is 'C'
@@ -57,6 +58,9 @@ for (let button of buttons) {
             input.value = '';
             currentOperation = '';
             firstOperand = null;
+        }
+        else if(button.id == 'backspace'){
+            input.value = input.value.slice(0, -1); 
         }
     });
 }
