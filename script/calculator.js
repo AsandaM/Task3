@@ -45,7 +45,7 @@ for (let button of buttons) {
              else if (currentOperation === '/') { // Check for division operation
                 input.value = firstOperand / parseFloat(input.value);
             }
-             else if (currentOperation === '1/x') { // Check for division operation
+             else if (currentOperation === '1/x') { // Check for 1/x operation
                 input.value = 1 / parseFloat(input.value)
             }
             currentOperation = '';
