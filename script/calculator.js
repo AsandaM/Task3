@@ -30,10 +30,12 @@ for (let button of buttons) {
             firstOperand = parseFloat(input.value);
             currentOperation = '/'; // Set operation to division
             input.value = ''; // Clear the input for the next operand
+        } else if (buttonText === '%') { // If the button is '1/x'
+            input.value = parseFloat(input.value)/100
+        } else if (buttonText === '√') { // If the button is '1/x'
+            input.value = Math.sqrt(parseFloat(input.value))
         } else if (buttonText === '1/x') { // If the button is '1/x'
-            firstOperand = parseFloat(input.value);
-            currentOperation = buttonText; // Set operation to division
-            input.value = ''; // Clear the input for the next operand
+            input.value = 1/(parseFloat(input.value))
         } else if (buttonText === '=') { // If the button is '='
             if (currentOperation === '+') {
                 input.value = firstOperand + parseFloat(input.value);
@@ -45,9 +47,6 @@ for (let button of buttons) {
              else if (currentOperation === '/') { // Check for division operation
                 input.value = firstOperand / parseFloat(input.value);
             }
-             else if (currentOperation === '1/x') { // Check for 1/x operation
-                input.value = 1 / parseFloat(input.value)
-            }
             currentOperation = '';
         } else if (buttonText === 'C') { // If the button is 'C'
             input.value = '';
@@ -58,11 +57,26 @@ for (let button of buttons) {
             input.value = '';
             currentOperation = '';
             firstOperand = null;
-        }
-        else if(button.id == 'backspace'){
-            input.value = input.value.slice(0, -1); 
+        }  else if (buttonText === ',') { // If the button is '.'
+            if (!input.value.includes('.')) {
+                input.value += '.';
+            }
+        } else if (buttonText === '+/-') { // If the button is '.'
+            if (!input.value.includes('-')) {
+                input.value += '-';
+            }
         }
     });
 }
+
+// Backspace button functionality
+document.querySelector('#backspace').addEventListener('click', () => {
+    input.value = input.value.slice(0, -1);
+});
+
+// Square button functionality
+document.querySelector('#power').addEventListener('click', () => {
+    input.value = Math.pow(parseFloat(input.value), 2);
+});
 
 
