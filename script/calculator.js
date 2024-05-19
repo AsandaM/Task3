@@ -76,5 +76,3 @@ document.querySelector('#backspace').addEventListener('click', () => {
 document.querySelector('#power').addEventListener('click', () => {
     input.value = Math.pow(parseFloat(input.value), 2);
 });
-
-
