@@ -9,6 +9,12 @@ body{
 #h1{
     text-align: center;
     margin-top: 0%;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-decoration: underline;
+    color:mistyrose;
+    background-color:seagreen;
 }
 
 
@@ -20,14 +26,21 @@ body{
 
 button{
     font-family:'Times New Roman', Times, serif;
-    border: 1px solid gray;
+    border: 2px solid gray;
     transition: border-color 0.3s;
 }
 
 button:hover{
     border-color: crimson;
+    border-radius: 10%;
 }
 
 input{
     height: 50%;
+    border: 2px solid gray;
+}
+
+input:hover{
+    border-color: crimson ;
+    border-radius: 10%;
 }
