@@ -15,18 +15,22 @@ for (let button of buttons) {
         } else if (buttonText === '+') { // If the button is '+'
             firstOperand = parseFloat(input.value);
             currentOperation = buttonText;
-            input.value = ''; // Clear the input for the next operand
+            input.setAttribute('placeholder',input.value)
+            input.value ='' // Clear the input for the next operand
         } else if (buttonText === '-') { // If the button is '-'
             firstOperand = parseFloat(input.value);
             currentOperation = buttonText;
+            input.setAttribute('placeholder',input.value)
             input.value = ''; // Clear the input for the next operand
         } else if (buttonText === 'x') { // If the button is 'x'
             firstOperand = parseFloat(input.value);
             currentOperation = '*'; // Set operation to *
+            input.setAttribute('placeholder',input.value)
             input.value = ''; // Clear the input for the next operand
         } else if (buttonText === '÷') { // If the button is '÷'
             firstOperand = parseFloat(input.value);
             currentOperation = '/'; // Set operation to /
+            input.setAttribute('placeholder',input.value)
             input.value = ''; // Clear the input for the next operand
         } else if (buttonText === '%') { // If the button is '%'
             input.value = parseFloat(input.value)/100
@@ -49,12 +53,14 @@ for (let button of buttons) {
         } else if (buttonText === 'C') { // If the button is 'C'
             input.value = '';
             currentOperation = '';
-            firstOperand = null;
+            input.setAttribute('placeholder',0)
+            // firstOperand = null;
         }
-         else if (buttonText === 'CE') { // If the button is 'C'
+         else if (buttonText === 'CE') { // If the button is 'CE'
             input.value = '';
             currentOperation = '';
-            firstOperand = null;
+            input.setAttribute('placeholder','')
+            // firstOperand = null;
         }  else if (buttonText === ',') { // If the button is ','
             if (!input.value.includes('.')) {
                 input.value += '.';
