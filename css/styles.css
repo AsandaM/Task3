@@ -11,61 +11,30 @@ h1{
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    
+    background-color: cadetblue;
+    padding: 10%;
+
 }
 
-.calc {
-    width: 300px;
-    background-color: #111;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 50px rgb(203, 227, 129), 0 0 50px rgb(109, 153, 168);
-    animation: animate 1s linear infinite;
-}
 
-@keyframes animate{
-    0%{
-        filter: hue-rotate(0deg);
-    }
-    100%{
-        filter: hue-rotate(360deg);
-    }
-}
-
-.display {
-    background-color: #333;
-}
-
-input {
-    font-size: 2rem;
-    color: #fff;
-    background-color: #333;
-}
-
-.keys {
+.keys{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1%;
     background-color: #333;
 }
 
-button {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
-    border: 1px solid #444;
-    background-color: #444;
-    color: white;
-    padding: 20px 0;
-    transition: background-color 0.3s, border-color 0.3s;
+button{
+    font-family:'Times New Roman', Times, serif;
+    border: 1px solid gray;
+    transition: border-color 0.3s;
 }
 
-button:hover {
-    /* background-color: #555;
-    border-color: crimson; */
+button:hover{
+    border-color: crimson;
+}
 
-    background: #8dcce1;
-    box-shadow: 0 0 5px #8dcce1, 0 0 25px #8dcce1, 0 0 50px #8dcce1, 0 0 200px #8dcce1;
+input{
+    height: 50%;
 }
 
